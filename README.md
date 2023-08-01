@@ -1,4 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Blade Chirps App Notes
+
+## 02 Installation
+
+Run the server
+
+```bash
+php artisan serve
+```
+
+Change the DB settings in the `.env` file depending on your local DB setting. In my case,
+I use MySQL and set the ff:
+
+```
+# .env
+
+# ...
+
+DB_DATABASE=laravel-blade-chirps
+DB_USERNAME=root
+
+# ...
+```
+
+For this Chirper app, the Laravel Breeze is installed for user auth.
+
+```bash
+composer require laravel/breeze --dev
+```
+
+Install blade template for rendering view
+
+```bash
+php artisan breeze:install blade
+```
+
+Run front-end dependencies, open another terminal to do server side stuffs
+
+```bash
+npm run dev
+```
+
+Run migration for database
+
+```bash
+php artisan migrate
+```
+
+## 03 Creating Chirps
+
+Create model, migration, and controller for Chirp
+
+```bash
+php artisan make:model -mrc Chirp
+```
+
+### Routing
+
+### Artisan Tinker
+
+Laravel REPL
+
+```bash
+php artisan tinker
+```
+
+Display all chirps from the database
+
+```
+Chirp::all();
+```
+
+**_Note: Check the git commits for all the changes._**
+
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +137,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
