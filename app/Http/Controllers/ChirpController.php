@@ -15,7 +15,10 @@ class ChirpController extends Controller
    */
   public function index(): View
   {
-    return view('chirps.index');
+    return view('chirps.index', [
+      // get the latest chirp message of the logged in user
+      'chirps' => Chirp::with('user')->latest()->get(),
+    ]);
   }
 
   /**
